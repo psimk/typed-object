@@ -1,9 +1,3 @@
-import typedObjectKeys from "./typedObjectKeys";
-import typedObjectValues from "./typedObjectValues";
-import typedObjectEntries from "./typedObjectEntries";
-
-export { typedObjectKeys, typedObjectValues, typedObjectEntries };
-
-export * from "./typedObjectKeys";
-export * from "./typedObjectValues";
-export * from "./typedObjectEntries";
+export { default as typedObjectKeys, ObjectKeys } from "./typedObjectKeys";
+export { default as typedObjectValues, ObjectValues } from "./typedObjectValues";
+export { default as typedObjectEntries, ObjectEntries } from "./typedObjectEntries";
