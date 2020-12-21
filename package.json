@@ -7,6 +7,9 @@
   "license": "MIT",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "rm -rf lib && run-p build:*",
     "build:esm": "tsc --module es2015 --target es5 --outDir lib/esm",
