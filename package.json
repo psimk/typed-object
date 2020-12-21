@@ -1,6 +1,6 @@
 {
   "name": "@psimk/typed-object",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "typed versions of `Object` property methods",
   "repository": "https://github.com/psimk/typed-object",
   "author": "Paul <p.simkevi@gmail.com>",
