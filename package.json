@@ -5,9 +5,14 @@
   "repository": "https://github.com/psimk/typed-object",
   "author": "Paul <p.simkevi@gmail.com>",
   "license": "MIT",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "types": "lib/esm/index.d.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "exports": {
+    "require": "./lib/cjs/index.js",
+    "import": "./lib/esm/index.js",
+    "default": "./lib/cjs/index.js"
+  },
   "files": [
     "lib"
   ],
