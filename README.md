@@ -21,7 +21,7 @@ Each method has a corresponding function, with the stricter typings already appl
 ```ts
 import { typedObjectKeys } from "@psimk/typed-object";
 
-const foo = { a: 1, b: 2, c: 4 };
+const foo = { a: 1, b: 2, c: 3 } as const;
 
 Object.keys(foo); // string[]
 
@@ -33,13 +33,60 @@ typedObjectKeys(foo); // Array<"a" | "b" | "c">
 Instead of the above, you can import the types on their own.
 
 ```ts
-import type { TypedObjectKeys } from "@psimk/typed-object";
+import type { ObjectKeys } from "@psimk/typed-object";
 
-const foo = { a: 1, b: 2, c: 4 };
+const foo = { a: 1, b: 2, c: 3 } as const;
 
 Object.keys(foo); // string[]
 
-(Object.keys as TypedObjectKeys)(foo); // Array<"a" | "b" | "c">
+(Object.keys as ObjectKeys)(foo); // Array<"a" | "b" | "c">
+```
+
+## API
+
+- **ObjectKeys**
+
+```ts
+import { typedObjectKeys } from "@psimk/typed-object";
+import type { ObjectKeys } from "@psimk/typed-object";
+
+const foo = { a: 1, b: 2, c: 3 } as const;
+
+Object.keys(foo); // string[]
+
+typedObjectKeys(foo); // Array<"a" | "b" | "c">
+// OR
+(Object.keys as ObjectKeys)(foo); // Array<"a" | "b" | "c">
+```
+
+- **ObjectValues**
+
+```ts
+import { typedObjectValues } from "@psimk/typed-object";
+import type { ObjectValues } from "@psimk/typed-object";
+
+const foo = { a: 1, b: 2, c: 3 } as const;
+
+Object.values(foo); // number[]
+
+typedObjectValues(foo); // Array<1 | 2 | 3>
+// OR
+(Object.keys as ObjectValues)(foo); // Array<1 | 2 | 3>
+```
+
+- **ObjectEntries**
+
+```ts
+import { typedObjectEntries } from "@psimk/typed-object";
+import type { ObjectEntries } from "@psimk/typed-object";
+
+const foo = { a: 1, b: 2, c: 3 } as const;
+
+Object.entries(foo); // number[]
+
+typedObjectEntries(foo); // Array<["a", 1] | ["b", 2] | ["c", 4]>
+// OR
+(Object.keys as ObjectEntries)(foo); // Array<["a", 1] | ["b", 2] | ["c", 4]>
 ```
 
 ## Why?
