@@ -12,37 +12,7 @@ npm i @psimk/typed-object
 
 ## Usage
 
-There are two ways to use the package:
-
-### functions
-
-Each method has a corresponding function, with the stricter typings already applied.
-
-```ts
-import { typedObjectKeys } from "@psimk/typed-object";
-
-const foo = { a: 1, b: 2, c: 3 } as const;
-
-Object.keys(foo); // string[]
-
-typedObjectKeys(foo); // Array<"a" | "b" | "c">
-```
-
-### types
-
-Instead of the above, you can import the types on their own.
-
-```ts
-import type { ObjectKeys } from "@psimk/typed-object";
-
-const foo = { a: 1, b: 2, c: 3 } as const;
-
-Object.keys(foo); // string[]
-
-(Object.keys as ObjectKeys)(foo); // Array<"a" | "b" | "c">
-```
-
-## API
+There are two ways to use the package, importing an "aliased" function with the stricter types already applied or importing just the type and manually casting the built-in methods. Below are examples using both approaches. There is no "best" approach and should be chosen according to your projects standards and requirements.
 
 - **ObjectKeys**
 
@@ -84,9 +54,9 @@ const foo = { a: 1, b: 2, c: 3 } as const;
 
 Object.entries(foo); // number[]
 
-typedObjectEntries(foo); // Array<["a", 1] | ["b", 2] | ["c", 4]>
+typedObjectEntries(foo); // Array<["a", 1] | ["b", 2] | ["c", 3]>
 // OR
-(Object.keys as ObjectEntries)(foo); // Array<["a", 1] | ["b", 2] | ["c", 4]>
+(Object.keys as ObjectEntries)(foo); // Array<["a", 1] | ["b", 2] | ["c", 3]>
 ```
 
 ## Why?
